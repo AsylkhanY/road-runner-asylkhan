@@ -118,6 +118,7 @@ public class BlueCloseAutonomous extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+        //INITIALIZING COMPUTER VISION
         initOpenCV();
 
         FtcDashboard dashboard = FtcDashboard.getInstance();
@@ -127,6 +128,7 @@ public class BlueCloseAutonomous extends LinearOpMode {
         SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap);
         Pose2d startPose = new Pose2d(11.68, 61.7, Math.toRadians(-90));
 
+        //INITIALIZING MOTORS
         intake = hardwareMap.get(DcMotor.class, "intake");
         leftClaw = hardwareMap.get(Servo.class, "left_claw");
         rightClaw = hardwareMap.get(Servo.class, "right_claw");
@@ -155,6 +157,7 @@ public class BlueCloseAutonomous extends LinearOpMode {
         controlHubCam.closeCameraDevice();
 
         drive.setPoseEstimate(startPose);
+        //BUILDING TRAJECTORIES FOR THE ROBOT
         Trajectory center1 = drive.trajectoryBuilder(startPose)
                 .splineToLinearHeading(new Pose2d(17, 24, Math.toRadians(180)), Math.toRadians(180))
                 .addTemporalMarker(1.4 , () -> {
@@ -474,6 +477,7 @@ public class BlueCloseAutonomous extends LinearOpMode {
             left = true;
         }
 
+        //MOVING THE ROBOT
         if(center) {
             leftLift.setPower(-0.7);
             rightLift.setPower(-0.7);
@@ -645,6 +649,8 @@ public class BlueCloseAutonomous extends LinearOpMode {
         leftLift.setPower(0);
         rightLift.setPower(0);
     }
+
+    //COMPUTER VISION
     private void initOpenCV() {
 
         // Create an instance of the camera
@@ -657,7 +663,7 @@ public class BlueCloseAutonomous extends LinearOpMode {
 
         controlHubCam.setPipeline(new YellowBlobDetectionPipeline());
 
-
+        
         controlHubCam.openCameraDevice();
         controlHubCam.startStreaming(CAMERA_WIDTH, CAMERA_HEIGHT, OpenCvCameraRotation.UPRIGHT);
 
@@ -680,6 +686,8 @@ public class BlueCloseAutonomous extends LinearOpMode {
 
         //controlHubCam.startStreaming(800,448, OpenCvCameraRotation.UPRIGHT);
     }
+
+    //MASK
     class YellowBlobDetectionPipeline extends OpenCvPipeline {
         @Override
         public Mat processFrame(Mat input) {
