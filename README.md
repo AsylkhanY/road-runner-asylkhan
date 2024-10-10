@@ -1,6 +1,7 @@
-## FOR ADMISSION OFFICE
+## FOR THE ADMISSION OFFICE
 The codes you are looking for are:
 "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/BlueCloseAutonomous.java" Computer Vision
+
 "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/RedCloseAutonomous.java" Computer Vision and Apriltag Detection
 
 Technologies that are used in the project are:
