@@ -7,7 +7,8 @@ The codes you are looking for are:
 "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/RedCloseAutonomous.java" Computer Vision and Apriltag Detection
 
 Technologies that are used in the project are:
-	Computer Vision: Applies a mask to the image that selects pixels within a specific color range. By detecting the largest contour of these pixels and determining their x and y coordinates, we can locate the object. According to the game's rules, the team prop is randomly placed in one of three locations, and computer vision is used to identify where the red or blue team props are located.
+
+   Computer Vision: Applies a mask to the image that selects pixels within a specific color range. By detecting the largest contour of these pixels and determining their x and y coordinates, we can locate the object. According to the game's rules, the team prop is randomly placed in one of three locations, and computer vision is used to identify where the red or blue team props are located.
 
 You can see it here: "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/BlueCloseAutonomous.java"
 	
