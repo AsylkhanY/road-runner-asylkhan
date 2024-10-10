@@ -1,5 +1,16 @@
 ## FOR ADMISSION OFFICE
-Main codes are located in
+The codes you are looking for are:
+"TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/BlueCloseAutonomous.java" Computer Vision
+"TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/RedCloseAutonomous.java" Computer Vision and Apriltag Detection
+
+Technologies that are used in the project are:
+	Computer Vision: Applies a mask to the image that selects pixels within a specific color range. By detecting the largest contour of these pixels and determining their x and y coordinates, we can locate the object. According to the game's rules, the team prop is randomly placed in one of three locations, and computer vision is used to identify where the red or blue team props are located.
+You can see it here: "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/BlueCloseAutonomous.java"
+	AprilTag Detection: There are several AprilTags placed on the map. Since it's challenging to maintain constant and precise robot movement, we can use AprilTags to determine the robot's location. For example, during the middle of the autonomous period, AprilTags can help us identify our position and adjust the movement accordingly.
+You can see it here: "TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/opmode/RedCloseAutonomous.java"
+ 	PID: The robot's motors are inconsistent and heavily influenced by factors like battery voltage, making it difficult to achieve precise and accurate movement. To solve this, we use PID technology with three odometry pods that measure the distance traveled by each. Using trigonometric formulas, we calculate the robot's x and z coordinates, as well as its rotation on the map. By moving the robot to a target location set in the code, we can achieve precise movement regardless of battery voltage or other factors, ensuring consistent accuracy in all conditions.
+You can see it here: TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/SampleMecanumDrive.java
+And here: TeamCode/src/main/java/org/firstinspires/ftc/teamcode/drive/StandardTrackingWheelLocalizer.java
 
 
 ## NOTICE
